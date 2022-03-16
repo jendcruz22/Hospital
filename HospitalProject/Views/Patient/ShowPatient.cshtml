@@ -1,0 +1,15 @@
+﻿@model HospitalProject.Models.Patient
+
+@{
+    ViewBag.Title = "ShowPatient";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Patient/ListPatient">Back To Patients</a>
+        <a class="dellink" href="/Patient/DeletePatientConfirm/@Model.Id">Delete</a>
+        <a class="navlink" href="/Patient/UpdatePatient/@Model.Id">Update</a>
+    </nav>
+    <h2>@Model.FName @Model.LName</h2>
+    <p>Address: @Model.Address</p>
+</div>

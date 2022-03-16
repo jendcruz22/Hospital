@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HospitalProject.Models.Patient>
+
+@{
+    ViewBag.Title = "ListPatient";
+}
+
+<div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Patient/NewPatient">New Patient</a>
+    </nav>
+    <h2 s>List of Patients</h2>
+    <form action="/Patient/ListPatient" method="GET">
+        <input type="text" name="searchKey" autocomplete="off" />
+        <input type="submit" value="Search" />
+    </form>
+
+    <ul>
+        @foreach (var patient in Model)
+        {
+            <div class="list-group-item row">
+                <div class="col-md-12">
+                    <a href="/Patient/ShowPatient/@patient.Id">@patient.FName</a>
+                </div>
+            </div>
+        }
+    </ul>
+</div>
