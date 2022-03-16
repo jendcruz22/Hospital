@@ -6,9 +6,25 @@
 
 <div id="containershow">
     <nav>
-        <a class="navlink" href="/Patient/ListPatient">Back To Patients</a>
-        <a class="dellink" href="/Patient/DeletePatientConfirm/@Model.Id">Delete</a>
-        <a class="navlink" href="/Patient/UpdatePatient/@Model.Id">Update</a>
+        <!-- Back to patient's list -->
+        <a href="/Patient/ListPatient" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-arrow-left"></span> Back to
+            <br />the Patient list
+        </a>
+        <!-- Update patient button -->
+        <a href="/Patient/UpdatePatient/@Model.Id" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-user glyphsize"></span>
+            <br />Update
+            <span class="glyphicon glyphicon-edit"></span>
+            <br />Patient
+        </a>
+        <!-- Delete patient button -->
+        <a href="/Patient/DeletePatientConfirm/@Model.Id" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-user glyphsize"></span>
+            <br />Delete
+            <span class="glyphicon glyphicon-minus"></span>
+            <br />Patient
+        </a>
     </nav>
     <h2>@Model.FName @Model.LName</h2>
     <p>Address: @Model.Address</p>

@@ -5,10 +5,13 @@
 }
 
 <div id="containerlist">
-    <nav>
-        <a class="navlink" href="/Patient/NewPatient">New Patient</a>
-    </nav>
-    <h2 s>List of Patients</h2>
+    <a href="/Patient/NewPatient" class="btn btn-dblue btn-lg" role="button">
+        <span class="glyphicon glyphicon-user glyphsize"></span> 
+        <br />New 
+        <span class="glyphicon glyphicon-plus green"></span>
+        <br />Patient
+    </a>
+    <h2>List of Patients</h2>
     <form action="/Patient/ListPatient" method="GET">
         <input type="text" name="searchKey" autocomplete="off" />
         <input type="submit" value="Search" />
