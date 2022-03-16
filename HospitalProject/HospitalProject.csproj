@@ -174,6 +174,14 @@
     <Compile Include="Migrations\202203150335016_Initial.Designer.cs">
       <DependentUpon>202203150335016_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203161824174_changeStaffID.cs" />
+    <Compile Include="Migrations\202203161824174_changeStaffID.Designer.cs">
+      <DependentUpon>202203161824174_changeStaffID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203161828127_changePatientID.cs" />
+    <Compile Include="Migrations\202203161828127_changePatientID.Designer.cs">
+      <DependentUpon>202203161828127_changePatientID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -271,6 +279,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202203150335016_Initial.resx">
       <DependentUpon>202203150335016_Initial.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203161824174_changeStaffID.resx">
+      <DependentUpon>202203161824174_changeStaffID.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203161828127_changePatientID.resx">
+      <DependentUpon>202203161828127_changePatientID.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

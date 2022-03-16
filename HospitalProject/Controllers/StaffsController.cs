@@ -46,7 +46,7 @@ namespace HospitalProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != staff.Id)
+            if (id != staff.SID)
             {
                 return BadRequest();
             }
@@ -84,7 +84,7 @@ namespace HospitalProject.Controllers
             db.Staffs.Add(staff);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = staff.Id }, staff);
+            return CreatedAtRoute("DefaultApi", new { id = staff.SID }, staff);
         }
 
         // DELETE: api/Staffs/5
@@ -114,7 +114,7 @@ namespace HospitalProject.Controllers
 
         private bool StaffExists(int id)
         {
-            return db.Staffs.Count(e => e.Id == id) > 0;
+            return db.Staffs.Count(e => e.SID == id) > 0;
         }
     }
 }

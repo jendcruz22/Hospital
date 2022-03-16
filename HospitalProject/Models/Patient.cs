@@ -7,7 +7,7 @@ namespace HospitalProject.Models
     public class Patient
     {
         [Key]
-        public int Id { get; set; }
+        public int PID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public string HC { get; set; }

@@ -27,16 +27,16 @@ namespace HospitalProject.Controllers
         }
 
         [HttpGet]
-        [Route("api/patientdata/findpatient/{id}")]
-        public Patient FindPatient(int id)
+        [Route("api/patientdata/findpatient/{PID}")]
+        public Patient FindPatient(int Id)
         {
-            return Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            return Hospital.Patients.SingleOrDefault(p => p.PID == Id);
         }
 
         [HttpPost]
-        public void DeletePatient(int id)
+        public void DeletePatient(int Id)
         {
-            var patient = Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            var patient = Hospital.Patients.SingleOrDefault(p => p.PID == Id);
             if (patient != null)
             {
                 Hospital.Patients.Remove(patient);
@@ -51,9 +51,9 @@ namespace HospitalProject.Controllers
             Hospital.SaveChanges();
         }
 
-        public void UpdatePatient(int id, [FromBody] Patient patientInfo)
+        public void UpdatePatient(int Id, [FromBody] Patient patientInfo)
         {
-            var patient = Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            var patient = Hospital.Patients.SingleOrDefault(p => p.PID == Id);
             if (patient != null)
             {
                 patient.FName = patientInfo.FName;
