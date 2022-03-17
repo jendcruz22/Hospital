@@ -69,7 +69,7 @@ namespace HospitalProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdatePatient(int Id, string FName, string LName, string HC, DateTime DOB, string Address, long Contact)
+        public ActionResult UpdatePatient(int PID, string FName, string LName, string HC, DateTime DOB, string Address, long Contact)
         {
             Patient patientInfo = new Patient();
             patientInfo.FName = FName;
@@ -80,25 +80,25 @@ namespace HospitalProject.Controllers
             patientInfo.Contact = Contact;
 
             PatientsDataController controller = new PatientsDataController();
-            controller.UpdatePatient(Id, patientInfo);
+            controller.UpdatePatient(PID, patientInfo);
 
-            return RedirectToAction("ShowPatient/" + Id);
+            return RedirectToAction("ShowPatient/" + PID);
         }
 
         // GET : /Patient/DeletePatientConfirm/{PID}
-        public ActionResult DeletePatientConfirm(int Id)
+        public ActionResult DeletePatientConfirm(int PID)
         {
           PatientsDataController controller = new PatientsDataController();
-          Patient newpatient = controller.FindPatient(Id);
+          Patient newpatient = controller.FindPatient(PID);
           return View(newpatient);
         }
 
         // POST : /Patient/DeletePatient/{PID}
         [HttpPost]
-        public ActionResult DeletePatient(int Id)
+        public ActionResult DeletePatient(int PID)
         {
             PatientsDataController controller = new PatientsDataController();
-            controller.DeletePatient(Id);
+            controller.DeletePatient(PID);
             return RedirectToAction("ListPatient");
         }
 
