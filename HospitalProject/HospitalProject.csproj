@@ -161,6 +161,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AppointmentDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PatientsDataController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
@@ -174,7 +175,16 @@
     <Compile Include="Migrations\202203150335016_Initial.Designer.cs">
       <DependentUpon>202203150335016_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203161638126_createappointmententity.cs" />
+    <Compile Include="Migrations\202203161638126_createappointmententity.Designer.cs">
+      <DependentUpon>202203161638126_createappointmententity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203161733004_addpatientidtoappointmentmodel.cs" />
+    <Compile Include="Migrations\202203161733004_addpatientidtoappointmentmodel.Designer.cs">
+      <DependentUpon>202203161733004_addpatientidtoappointmentmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -271,6 +281,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202203150335016_Initial.resx">
       <DependentUpon>202203150335016_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203161638126_createappointmententity.resx">
+      <DependentUpon>202203161638126_createappointmententity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203161733004_addpatientidtoappointmentmodel.resx">
+      <DependentUpon>202203161733004_addpatientidtoappointmentmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
