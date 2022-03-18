@@ -1,0 +1,13 @@
+﻿@model HospitalProject.Models.DepartmentDto
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/department/list">Back to the list</a>
+<br />
+<a href="/department/edit/@Model.DID">Update</a>
+<br />
+<a style="color:#ab2020;" href="/department/deleteconfirm/@Model.DID">Delete</a>
+<h2>@Model.DName</h2>
+<div>Department ID is: @Model.DID</div>
+
