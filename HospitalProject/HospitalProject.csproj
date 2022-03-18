@@ -187,6 +187,10 @@
     <Compile Include="Migrations\202203161828127_changePatientID.Designer.cs">
       <DependentUpon>202203161828127_changePatientID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203180715449_modifiedStaffTable.cs" />
+    <Compile Include="Migrations\202203180715449_modifiedStaffTable.Designer.cs">
+      <DependentUpon>202203180715449_modifiedStaffTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Patient.cs" />
@@ -296,6 +300,9 @@
     <EmbeddedResource Include="Migrations\202203161828127_changePatientID.resx">
       <DependentUpon>202203161828127_changePatientID.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203180715449_modifiedStaffTable.resx">
+      <DependentUpon>202203180715449_modifiedStaffTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
