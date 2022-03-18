@@ -7,7 +7,6 @@ namespace HospitalProject.Models
     {
         [Key]
         public int SID { get; set; }
-        [Required]
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime DOB { get; set; }

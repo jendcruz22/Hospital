@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Web.Http;
 using HospitalProject.Models;
 using HospitalProject.Data;
+using System.Diagnostics;
 
 namespace HospitalProject.Controllers
 {
@@ -22,7 +23,7 @@ namespace HospitalProject.Controllers
             }
             else
             {
-                return Hospital.Patients.Where(m => m.FName.Contains(searchKey));
+                return Hospital.Patients.Where(p => p.FName.Contains(searchKey));
             }
         }
 

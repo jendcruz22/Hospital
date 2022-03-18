@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "NewStaff";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Staff/ListStaff">Back to Home</a>
+    </nav>
+</div>
+
+<h2>New Staff Entry</h2>
+
+<form method="POST" action="/Staff/CreateStaff">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="FName">First Name: </label>
+            <input type="text" name="FName" id="FName" />
+        </div>
+        <div class="form-group">
+            <label for="LName">Last Name: </label>
+            <input type="text" name="LName" id="LName" />
+        </div>
+        <div class="form-group">
+            <label for="Contact">Contact No: </label>
+            <input type="number" name="Contact" id="Contact" />
+        </div>
+        <div class="form-group">
+            <label for="DOB">Date of Birth: </label>
+            <input type="date" name="DOB" id="DOB" />
+        </div>
+        <div class="form-group">
+            <label for="DID">Department ID: </label>
+            <input type="text" name="DID" id="DID" />
+        </div>
+        <div>
+            <input class="btn btn-default" type="submit" value="Create New Staff" />
+        </div>
+    </div>
+</form>
+
