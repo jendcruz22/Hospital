@@ -254,6 +254,17 @@
     <Content Include="Views\Patient\DeletePatientConfirm.cshtml" />
     <Content Include="Views\Patient\NewPatient.cshtml" />
     <Content Include="Views\Patient\UpdatePatient.cshtml" />
+    <Content Include="Views\Department\DeleteConfirm.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Error.cshtml" />
+    <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\New.cshtml" />
+    <Content Include="Views\Staff\DeleteStaffConfirm.cshtml" />
+    <Content Include="Views\Staff\ListStaff.cshtml" />
+    <Content Include="Views\Staff\NewStaff.cshtml" />
+    <Content Include="Views\Staff\ShowStaff.cshtml" />
+    <Content Include="Views\Staff\UpdateStaff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

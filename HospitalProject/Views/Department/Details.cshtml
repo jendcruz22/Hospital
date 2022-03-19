@@ -3,11 +3,30 @@
     ViewBag.Title = "View";
 }
 
-<a href="/department/list">Back to the list</a>
-<br />
-<a href="/department/edit/@Model.DID">Update</a>
-<br />
-<a style="color:#ab2020;" href="/department/deleteconfirm/@Model.DID">Delete</a>
-<h2>@Model.DName</h2>
-<div>Department ID is: @Model.DID</div>
+<div id="containershow">
+    <nav>
+        <!-- Back to department list -->
+        <a href="/department/list" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-arrow-left"></span> Back to
+            <br />the Department list
+        </a>
+        <!-- Update department button -->
+        <a href="/department/edit/@Model.DID" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-home glyphsize"></span>
+            <br />Update
+            <span class="glyphicon glyphicon-edit"></span>
+            <br />Department
+        </a>
+        <!-- Delete department button -->
+        <a style="color:#ab2020;" href="/department/deleteconfirm/@Model.DID" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-home glyphsize"></span>
+            <br />Delete
+            <span class="glyphicon glyphicon-minus"></span>
+            <br />Department
+        </a>
+    </nav>
+
+    <h2>@Model.DName</h2>
+    <div>Department ID is: @Model.DID</div>
+</div>
 
