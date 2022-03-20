@@ -163,6 +163,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\AppointmentDataController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DepartmentDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -175,11 +177,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203150335016_Initial.cs" />
-    <Compile Include="Migrations\202203150335016_Initial.Designer.cs">
-      <DependentUpon>202203150335016_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202203201858346_updatedatabaseafterclonerepo.cs" />
+    <Compile Include="Migrations\202203201858346_updatedatabaseafterclonerepo.Designer.cs">
+      <DependentUpon>202203201858346_updatedatabaseafterclonerepo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\User.cs" />
@@ -187,6 +191,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\HospitalProject.dll" />
+    <Content Include="bin\HospitalProject.pdb" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -215,6 +238,9 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="jsondata\appointment.json" />
+    <Content Include="jsondata\department.json" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -240,9 +266,23 @@
     <Content Include="Views\Patient\DeletePatientConfirm.cshtml" />
     <Content Include="Views\Patient\NewPatient.cshtml" />
     <Content Include="Views\Patient\UpdatePatient.cshtml" />
+    <Content Include="Views\Appointment\Details.cshtml" />
+    <Content Include="Views\Appointment\List.cshtml" />
+    <Content Include="Views\Department\DeleteConfirm.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Error.cshtml" />
+    <Content Include="Views\Department\List.cshtml" />
+    <Content Include="Views\Department\New.cshtml" />
+    <Content Include="Views\Staff\DeleteStaffConfirm.cshtml" />
+    <Content Include="Views\Staff\ListStaff.cshtml" />
+    <Content Include="Views\Staff\NewStaff.cshtml" />
+    <Content Include="Views\Staff\ShowStaff.cshtml" />
+    <Content Include="Views\Staff\UpdateStaff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\Values\" />
   </ItemGroup>
   <ItemGroup>
@@ -275,26 +315,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203150335016_Initial.resx">
-      <DependentUpon>202203150335016_Initial.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203161824174_changeStaffID.resx">
-      <DependentUpon>202203161824174_changeStaffID.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203161828127_changePatientID.resx">
-      <DependentUpon>202203161828127_changePatientID.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203180715449_modifiedStaffTable.resx">
-      <DependentUpon>202203180715449_modifiedStaffTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203161638126_createappointmententity.resx">
-      <DependentUpon>202203161638126_createappointmententity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203161733004_addpatientidtoappointmentmodel.resx">
-      <DependentUpon>202203161733004_addpatientidtoappointmentmodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203201858346_updatedatabaseafterclonerepo.resx">
+      <DependentUpon>202203201858346_updatedatabaseafterclonerepo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

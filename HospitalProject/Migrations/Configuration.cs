@@ -1,6 +1,5 @@
 namespace HospitalProject.Migrations
 {
-    using HospitalProject.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,13 +14,18 @@ namespace HospitalProject.Migrations
 
         protected override void Seed(HospitalProject.Data.HospitalProjectContext context)
         {
-            context.Patients.AddOrUpdate(x => x.PID,
-                new Patient() {PID = 1, FName = "Jenny", LName = "Dcruz", Address = "1698 Albion road", Contact = 9059812239, DOB = new DateTime(1999, 12, 22) }
-                );
+            //  This method will be called after migrating to the latest version.
 
-            context.Staffs.AddOrUpdate(x => x.SID,
-                new Staff() { SID = 1, FName = "Hardi", LName = "Hemantkumar", DOB = new DateTime(2000, 04, 29), Contact = 9930911456, DID = "ER" }
-                );
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }
