@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Web.Http;
 using HospitalProject.Models;
 using HospitalProject.Data;
+using System.Diagnostics;
 
 namespace HospitalProject.Controllers
 {
@@ -22,21 +23,21 @@ namespace HospitalProject.Controllers
             }
             else
             {
-                return Hospital.Patients.Where(m => m.FName.Contains(searchKey));
+                return Hospital.Patients.Where(p => p.FName.Contains(searchKey));
             }
         }
 
         [HttpGet]
-        [Route("api/patientdata/findpatient/{id}")]
-        public Patient FindPatient(int id)
+        [Route("api/patientdata/findpatient/{PID}")]
+        public Patient FindPatient(int Id)
         {
-            return Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            return Hospital.Patients.SingleOrDefault(p => p.PID == Id);
         }
 
         [HttpPost]
-        public void DeletePatient(int id)
+        public void DeletePatient(int Id)
         {
-            var patient = Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            var patient = Hospital.Patients.SingleOrDefault(p => p.PID == Id);
             if (patient != null)
             {
                 Hospital.Patients.Remove(patient);
@@ -51,9 +52,9 @@ namespace HospitalProject.Controllers
             Hospital.SaveChanges();
         }
 
-        public void UpdatePatient(int id, [FromBody] Patient patientInfo)
+        public void UpdatePatient(int Id, [FromBody] Patient patientInfo)
         {
-            var patient = Hospital.Patients.SingleOrDefault(p => p.Id == id);
+            var patient = Hospital.Patients.SingleOrDefault(p => p.PID == Id);
             if (patient != null)
             {
                 patient.FName = patientInfo.FName;

@@ -1,4 +1,4 @@
-﻿@model HospitalProject.Models.Patient
+﻿@model HospitalProject.Models.Staff
 
 @{
     ViewBag.Title = "DeleteConfirm";
@@ -6,12 +6,12 @@
 
 <div id="containershow">
     <nav>
-        <a class="navlink" href="/Patient/ShowPatient/@Model.PID">Cancel</a>
+        <a class="navlink" href="/Staff/ShowStaff/@Model.SID">Cancel</a>
     </nav>
     <h2>Are you sure you want to delete @Model.FName?</h2>
     <p>This action cannot be undone.</p>
 
-    <form method="POST" action="/Patient/DeletePatient/@Model.PID">
+    <form method="POST" action="/Staff/DeleteStaff/@Model.SID">
         <button class="delbutton">
             Confirm Delete
         </button>

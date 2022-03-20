@@ -5,8 +5,8 @@ namespace HospitalProject.Models
 {
     public class Staff
     {
-        public int Id { get; set; }
-        [Required]
+        [Key]
+        public int SID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
         public DateTime DOB { get; set; }

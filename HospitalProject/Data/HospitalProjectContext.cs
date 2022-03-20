@@ -22,8 +22,9 @@ namespace HospitalProject.Data
         public System.Data.Entity.DbSet<HospitalProject.Models.Patient> Patients { get; set; }
 
         public System.Data.Entity.DbSet<HospitalProject.Models.Staff> Staffs { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<HospitalProject.Models.Department> Departments { get; set; }
 
-        public System.Data.Entity.DbSet<HospitalProject.Models.Appointment> Appointments { get; set; }
 
 
     }

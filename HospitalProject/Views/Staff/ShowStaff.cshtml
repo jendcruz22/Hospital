@@ -1,0 +1,33 @@
+﻿@model HospitalProject.Models.Staff
+
+@{
+    ViewBag.Title = "ShowStaff";
+}
+
+<div id="containershow">
+    <nav>
+        <!-- Back to staff's list -->
+        <a href="/Staff/ListStaff" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-arrow-left"></span> Back to
+            <br />the Staff list
+        </a>
+        <!-- Update staff button -->
+        <a href="/Staff/UpdateStaff/@Model.SID" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-user glyphsize"></span>
+            <br />Update
+            <span class="glyphicon glyphicon-edit"></span>
+            <br />Staff
+        </a>
+        <!-- Delete staff button -->
+        <a href="/Staff/DeleteStaffConfirm/@Model.SID" class="btn btn-dblue btn-lg" role="button">
+            <span class="glyphicon glyphicon-user glyphsize"></span>
+            <br />Delete
+            <span class="glyphicon glyphicon-minus"></span>
+            <br />Staff
+        </a>
+    </nav>
+    <h2>@Model.FName @Model.LName</h2>
+    <p>Department Id: @Model.DID</p>
+    <p>Contact: @Model.Contact</p>
+    <p>Date of Birth: @Model.DOB</p>
+</div>

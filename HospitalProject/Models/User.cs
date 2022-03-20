@@ -4,17 +4,20 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace HospitalProject.Models
 {
-    public class Patient
+    public class User
     {
         [Key]
-        public int PID { get; set; }
+        public int UID { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
-        public string HC { get; set; }
-        public DateTime DOB { get; set; }
-        public string Address { get; set; }
-        public long Contact { get; set; }
+
+        public string Email { get; set; }
+        // need to check the type of the pwd
+        public string PWD { get; set; }
+
+
     }
 }

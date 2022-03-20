@@ -26,9 +26,9 @@ namespace HospitalProject.Controllers
             return View(patients);
         }
 
-        // GET : /Patient/ShowPatient/{Id}
+        // GET : /Patient/ShowPatient/{PID}
         [HttpGet]
-        [Route("Patient/ShowPatient/{Id}")]
+        [Route("Patient/ShowPatient/{PID}")]
         public ActionResult ShowPatient(int Id)
         {
             PatientsDataController controller = new PatientsDataController();
@@ -85,15 +85,15 @@ namespace HospitalProject.Controllers
             return RedirectToAction("ShowPatient/" + Id);
         }
 
-        // GET : /Patient/DeletePatientConfirm/{Id}
-        public ActionResult DeletePatientConfirm(int id)
+        // GET : /Patient/DeletePatientConfirm/{PID}
+        public ActionResult DeletePatientConfirm(int Id)
         {
           PatientsDataController controller = new PatientsDataController();
-          Patient newpatient = controller.FindPatient(id);
+          Patient newpatient = controller.FindPatient(Id);
           return View(newpatient);
         }
 
-        // POST : /Patient/DeletePatient/{Id}
+        // POST : /Patient/DeletePatient/{PID}
         [HttpPost]
         public ActionResult DeletePatient(int Id)
         {
