@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using HospitalProject.Data;
 using HospitalProject.Models;
+using System.Diagnostics;
 
 namespace HospitalProject.Controllers
 {
@@ -34,8 +35,8 @@ namespace HospitalProject.Controllers
                 Date = a.Date,
                 Time = a.Time,
                 Reason = a.Reason,
-                //FName = a.Patient.FName,
-                //LName = a.Patient.LName
+                FName = a.Patient.FName,
+                LName = a.Patient.LName
             }));
             return appointmentDtos;
         }
@@ -48,17 +49,20 @@ namespace HospitalProject.Controllers
         // GET: api/AppointmentData/FindAppointment/5
         [ResponseType(typeof(Appointment))]
         [HttpGet]
+        [Route("api/AppointmentData/FindAppointment/{id}")]
         public IHttpActionResult FindAppointment(int id)
         {
+            Debug.WriteLine("id:" + id);  
             Appointment appointment = db.Appointments.Find(id);
+            Debug.WriteLine(appointment);
             AppointmentDto appointmentDto = new AppointmentDto()
             {
                 AID = appointment.AID,
                 Date = appointment.Date,
                 Time = appointment.Time,
                 Reason = appointment.Reason,
-                //FName = appointment.Patient.FName,
-                //LName = appointment.Patient.LName
+                FName = appointment.Patient.FName,
+                LName = appointment.Patient.LName
             };
             if (appointment == null)
             {

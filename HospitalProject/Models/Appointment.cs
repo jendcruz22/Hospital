@@ -13,9 +13,9 @@ namespace HospitalProject.Models
         public DateTime Date { get; set; }
         public DateTime Time { get; set; }
         public string Reason { get; set; }
-        /*[ForeignKey("Patient")]
+        [ForeignKey("Patient")]
          public int Id { get; set; }
-        public virtual Patient Patient { get; set; }*/
+        public virtual Patient Patient { get; set; }
         /*[ForeignKey("Staff")]
         public int SID { get; set;}
 
