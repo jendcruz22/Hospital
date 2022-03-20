@@ -7,9 +7,9 @@ namespace HospitalProject.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Appointments", "Id", c => c.Int(nullable: false));
-            CreateIndex("dbo.Appointments", "Id");
-            AddForeignKey("dbo.Appointments", "Id", "dbo.Patients", "Id", cascadeDelete: true);
+            AddColumn("dbo.Appointments", "PID", c => c.Int(nullable: false));
+            CreateIndex("dbo.Appointments", "PID");
+            AddForeignKey("dbo.Appointments", "PID", "dbo.Patients", "Id", cascadeDelete: true);
         }
         
         public override void Down()
