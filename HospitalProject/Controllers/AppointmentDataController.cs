@@ -36,7 +36,34 @@ namespace HospitalProject.Controllers
                 Time = a.Time,
                 Reason = a.Reason,
                 FName = a.Patient.FName,
-                LName = a.Patient.LName
+                LName = a.Patient.LName,
+                PID = a.PID
+            }));
+            return appointmentDtos;
+        }
+
+        /// <summary>
+        /// Display List of all appointments for perticular patient
+        /// </summary>
+        /// <param name="id">passing patient id parameter</param>
+        /// <returns>List of appointments with patient first and last name, date, time, and reason for perticular patient</returns>
+        // GET: api/AppointmentData/ListAppointmentsByPatient/5
+        [HttpGet]
+        [Route("api/AppointmentData/ListAppointmentsByPatient/{id}")]
+        public IEnumerable<AppointmentDto> ListAppointmentsByPatient(int id)
+        {
+            List<Appointment> appointments = db.Appointments.Where(
+                a => a.Patient.PID == id).OrderBy(a => a.Date).ToList();
+            List<AppointmentDto> appointmentDtos = new List<AppointmentDto>();
+            appointments.ForEach(a => appointmentDtos.Add(new AppointmentDto()
+            {
+                AID = a.AID,
+                Date = a.Date,
+                Time = a.Time,
+                Reason = a.Reason,
+                FName = a.Patient.FName,
+                LName = a.Patient.LName,
+                PID = a.PID
             }));
             return appointmentDtos;
         }
@@ -62,7 +89,8 @@ namespace HospitalProject.Controllers
                 Time = appointment.Time,
                 Reason = appointment.Reason,
                 FName = appointment.Patient.FName,
-                LName = appointment.Patient.LName
+                LName = appointment.Patient.LName,
+                PID = appointment.PID
             };
             if (appointment == null)
             {

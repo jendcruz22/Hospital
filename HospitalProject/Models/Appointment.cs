@@ -11,7 +11,7 @@ namespace HospitalProject.Models
         [Key]
         public int AID { get; set; }
         public DateTime Date { get; set; }
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
         public string Reason { get; set; }
         [ForeignKey("Patient")]
          public int PID { get; set; }
@@ -26,9 +26,10 @@ namespace HospitalProject.Models
     {
         public int AID { get; set; }
         public DateTime Date { get; set; }
-        public DateTime Time { get; set; }
+        public string Time { get; set; }
         public string Reason { get; set; }
         public string FName { get; set; }
         public string LName { get; set; }
+        public int PID { get; set; }
     }
 }

@@ -181,6 +181,10 @@
     <Compile Include="Migrations\202203201858346_updatedatabaseafterclonerepo.Designer.cs">
       <DependentUpon>202203201858346_updatedatabaseafterclonerepo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203202031238_updatetimecolumnpropertyintoappointment.cs" />
+    <Compile Include="Migrations\202203202031238_updatetimecolumnpropertyintoappointment.Designer.cs">
+      <DependentUpon>202203202031238_updatetimecolumnpropertyintoappointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Department.cs" />
@@ -279,6 +283,11 @@
     <Content Include="Views\Staff\NewStaff.cshtml" />
     <Content Include="Views\Staff\ShowStaff.cshtml" />
     <Content Include="Views\Staff\UpdateStaff.cshtml" />
+    <Content Include="Views\Appointment\New.cshtml" />
+    <Content Include="Views\Appointment\Error.cshtml" />
+    <Content Include="Views\Appointment\ListByPatient.cshtml" />
+    <Content Include="Views\Appointment\Edit.cshtml" />
+    <Content Include="Views\Appointment\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +326,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202203201858346_updatedatabaseafterclonerepo.resx">
       <DependentUpon>202203201858346_updatedatabaseafterclonerepo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203202031238_updatetimecolumnpropertyintoappointment.resx">
+      <DependentUpon>202203202031238_updatetimecolumnpropertyintoappointment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
